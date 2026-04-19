@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Karaoke Song Generator</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #1e1e2f, #3a3a5a);
+        color: rgb(252, 249, 249);
+        text-align: center;
+        padding-top: 80px;
+    }
+    .link{
+        color:aliceblue
+    }
+
+    h1 {
+        font-size: 40px;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 18px;
+        opacity: 0.8;
+    }
+
+    button {
+        padding: 15px 25px;
+        font-size: 18px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        margin-top: 20px;
+        background-color: #ff4d6d;
+        color: white;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background-color: #ff1f4b;
+    }
+
+    .result {
+        margin-top: 40px;
+        font-size: 24px;
+        background: rgba(255,255,255,0.1);
+        padding: 20px;
+        display: inline-block;
+        border-radius: 12px;
+        min-width: 300px;
+    }
+
+    .title {
+        font-size: 28px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .artist {
+        font-size: 20px;
+        opacity: 0.9;
+    }
+</style>
+</head>
+
+<body>
+ <nav>
+        <a href="fromscratch.html" class="link">Back to All About A Cappella</a> 
+    </nav>
+<h1>🎤 Karaoke Song Generator</h1>
+<p>Click the button to generate your next karaoke hit!</p>
+
+<button onclick="generateSong()">Generate Song</button>
+
+<div class="result" id="result">
+    Your song will appear here...
+</div>
+
+<script>
+    const songs = [
+        { title: "Midnight Dreams", artist: "Ava Star" },
+        { title: "Neon Lights", artist: "DJ Horizon" },
+        { title: "Broken Echoes", artist: "Luna Wave" },
+        { title: "Summer Heartbeat", artist: "The Skylines" },
+        { title: "Dancing Alone", artist: "Mia Rivers" },
+        { title: "Fire in the Sky", artist: "Nova Drive" },
+        { title: "Lost in Rhythm", artist: "Echo Lane" },
+        { title: "Electric Love", artist: "Jax Nova" },
+        { title: "Falling Stars", artist: "The Wild Tones" },
+        { title: "City of Sound", artist: "Metro Pulse" }
+    ];
+
+    function generateSong() {
+        const randomIndex = Math.floor(Math.random() * songs.length);
+        const song = songs[randomIndex];
+
+        document.getElementById("result").innerHTML = `
+            <div class="title">🎵 ${song.title}</div>
+            <div class="artist">by ${song.artist}</div>
+        `;
+    }
+</script>
+
+</body>
+</html>
